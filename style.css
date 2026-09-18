@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #fbfbfb;
+    color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.app-layout {
+    width: 100%;
+    max-width: 980px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.top-bar h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.top-bar p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.main-content {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+/* Video viewport */
+.video-container {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+#camera-feed,
+#detection-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#detection-canvas {
+    pointer-events: none;
+}
+
+.overlay-msg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.95rem;
+    z-index: 5;
+    background-color: #000;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.sidebar-header {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.items-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.badge.present {
+    color: #0f8b44;
+    background-color: #e6f7ec;
+}
+
+.badge.missing {
+    color: #888;
+    background-color: #f1f1f1;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.65rem;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}

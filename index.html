@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tool Manager Buddy</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-layout">
+        <header class="top-bar">
+            <h2>Encephalon.</h2>
+        </header>
+
+        <main class="main-content">
+            <div class="video-container">
+                <div id="loader-msg" class="overlay-msg">
+                    Encephalon is loading... Please wait.
+                </div>
+                <video id="camera-feed" autoplay playsinline muted></video>
+                <canvas id="detection-canvas"></canvas>
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-header">Tools availability</div>
+                <ul class="items-list">
+                    <li class="item" id="item-remote">
+                        <span class="name">📐 AC Remote</span>
+                        <span class="badge missing">missing</span>
+                    </li>
+                    <li class="item" id="item-music">
+                        <span class="name">🎵 Music Player</span>
+                        <span class="badge missing">missing</span>
+                    </li>
+                    <li class="item" id="item-powerbank">
+                        <span class="name">🔋 Power Bank</span>
+                        <span class="badge missing">missing</span>
+                    </li>
+                </ul>
+                <button id="btn-start" class="btn">Wake Up Encephalon</button>
+            </aside>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
