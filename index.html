@@ -4,47 +4,78 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tool Manager Buddy</title>
+    <title>Encephalon.</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="brain.svg" />
 </head>
 
 <body>
-    <div class="app-layout">
-        <header class="top-bar">
-            <h2>Encephalon.</h2>
+    <div class="bg-grid-layer"></div>
+
+    <main class="vision-stage">
+        <!-- Top Meta Readout -->
+        <header class="stage-header">
+            <div class="brand-cluster">
+                <span class="system-tag">encephalon. <v3 class="0"></v3></span>
+                <h1>encephalon.</h1>
+            </div>
+            <div class="action-cluster">
+                <span id="sys-status" class="status-indicator">offline</span>
+                <button id="btn-start" class="power-btn">Access Camera</button>
+            </div>
         </header>
 
-        <main class="main-content">
-            <div class="video-container">
-                <div id="loader-msg" class="overlay-msg">
-                    Encephalon is loading... Please wait.
-                </div>
-                <video id="camera-feed" autoplay playsinline muted></video>
-                <canvas id="detection-canvas"></canvas>
+        <!-- Centered Hero Viewport -->
+        <section class="viewport-frame">
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+
+            <div id="loader-msg" class="overlay-notice">
+                <div class="radar-ping"></div>
+                <p>Grant Camera Access.</p>
             </div>
 
-            <aside class="sidebar">
-                <div class="sidebar-header">Tools availability</div>
-                <ul class="items-list">
-                    <li class="item" id="item-remote">
-                        <span class="name">📐 AC Remote</span>
-                        <span class="badge missing">missing</span>
-                    </li>
-                    <li class="item" id="item-music">
-                        <span class="name">🎵 Music Player</span>
-                        <span class="badge missing">missing</span>
-                    </li>
-                    <li class="item" id="item-powerbank">
-                        <span class="name">🔋 Power Bank</span>
-                        <span class="badge missing">missing</span>
-                    </li>
-                </ul>
-                <button id="btn-start" class="btn">Wake Up Encephalon</button>
-            </aside>
-        </main>
-    </div>
+            <video id="camera-feed" autoplay playsinline muted></video>
+            <canvas id="detection-canvas"></canvas>
+        </section>
 
-    <script type="module" src="app.js"></script>
+        <!-- Bottom Tool Inventory -->
+        <footer class="inventory-deck">
+            <div class="deck-label">Class</div>
+
+            <div class="deck-grid">
+                <div class="target-card" id="item-remote">
+                    <div class="card-meta">
+                        <span class="target-index">i</span>
+                        <span class="target-badge missing">Not in sight.</span>
+                    </div>
+                    <div class="target-title">AC REMOTE</div>
+                </div>
+
+                <!-- Target 2 -->
+                <div class="target-card" id="item-music">
+                    <div class="card-meta">
+                        <span class="target-index">02</span>
+                        <span class="target-badge missing">Not in sight.</span>
+                    </div>
+                    <div class="target-title">MUSIC PLAYER</div>
+                </div>
+
+                <!-- Target 3 -->
+                <div class="target-card" id="item-powerbank">
+                    <div class="card-meta">
+                        <span class="target-index">03</span>
+                        <span class="target-badge missing">Not in sight.</span>
+                    </div>
+                    <div class="target-title">POWER BANK</div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
